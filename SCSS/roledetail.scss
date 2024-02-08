@@ -1,0 +1,168 @@
+@mixin flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @mixin flexstart {
+    display: flex;
+    // flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  @mixin flexround {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .roles-choices {
+    @include flexrow();
+    align-items: center;
+    margin-top: 10px;
+    height: 80px;
+    .roles-employee {
+      .employee {
+        @include flexstart();
+        align-items: center;
+        img {
+          padding: 30px 5px 0px 5px;
+        }
+        h6 {
+          font-size: 20px;
+          margin-bottom: 0px;
+          margin-top: 30px;
+          color: #838f9c;
+        }
+      }
+      p {
+        color: #181d2361;
+      }
+    }
+    .create {
+      display: flex;
+      align-items: center;
+      .add {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 40px;
+        width: 200px;
+        margin-left: 0px;
+        margin-top: 0px;
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(245, 83, 71);
+        border: none;
+        img {
+          margin-top: 5px;
+          padding-right: 10px;
+        }
+        p {
+          margin-top: 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .role-description {
+    h5 {
+      margin-top: 20px;
+      font-size: 20px;
+      margin-bottom: 0px;
+    }
+    p {
+      font-size: 14px;
+      padding-right: 10px;
+      color: #181d2361;
+      line-height: 20px;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+    height: 225px;
+    .container-box {
+      box-shadow: 0px 0px 2px 0.12px rgb(128, 118, 118);
+      height: 250px;
+      border-radius: 5px;
+      .box-header {
+        @include flexstart();
+        align-items: center;
+        margin-left: 20px;
+        margin-top: 25px;
+        margin-bottom: 0px;
+        .profile-image {
+          img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+          }
+        }
+        .profile-text {
+          padding-left: 10px;
+  
+          h6 {
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+          }
+  
+          p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: rgb(83, 80, 80);
+            font-size: 15px;
+            padding-top: 3px;
+          }
+        }
+      }
+      .inf-id,
+      .mail,
+      .dept,
+      .location {
+        @include flexstart();
+        align-items: center;
+        padding-left: 20px;
+        gap: 15px;
+        color: #232b33cc;
+      }
+      .mail p,
+      .dept p,
+      .location p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        font-size: 15px;
+      }
+      .mail img,
+      .dept img,
+      .location img {
+        align-items: center;
+        padding-top: 5px;
+      }
+      .inf-id {
+        p {
+          margin-bottom: 0px;
+        }
+        img {
+          padding-bottom: 0px;
+          padding-top: 10px;
+        }
+      }
+      .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 20px;
+        gap: 5px;
+        padding-top: 10px;
+  
+        p {
+          color: rgb(83, 80, 80);
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>NewRole</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/newrole.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="homepage">
+        <div class="side-navbar">
+            <div class="logo">
+                <img src="../Images/TezoLogo.png" alt="tezologo">
+                <img src="../Images/handle.png" alt="side-handle">
+            </div>
+            <h6>ALL</h6>
+            <div class="navitem">
+                <img src="../Images/Dashboard-icon.svg" alt="dashboard-icon">
+                <p>Dashboard</p>
+                <div class="indication">   </div> 
+            </div>
+            <div class="navitem">
+                <img src="../Images/employees-icon.svg" alt="group-icon">
+                <p>Employees</p>
+                <div class="indication"> </div> 
+            </div>
+            <h6>ROLE / USER MANAGEMENT</h6>
+            <div class="nav-events">
+                <div class="navitem">
+                    <img src="../Images/settings-icon.svg" alt="settings">
+                    <p> Roles</p>
+                </div>
+                <img src="../Images/righticon.svg" alt="right-arrow">
+            </div>
+            <div class="nav-events">
+                <div class="navitem">
+                    <img src="../Images/user-icon.svg" alt="user">
+                    <p> Access rights</p>
+                </div>
+                <img src="../Images/righticon.svg" alt="right-arrow">  
+            </div>
+            <div class="install-update">
+                <h3>Install new update 2.3.1A</h3>
+                <p>Allow to launch the new update for the AD application</p>
+                <div class="permission-btns">
+                    <button >Dismiss</button>
+                    <button >Accept</button>
+                </div>
+            </div>
+        </div>
+        <div class="context">
+            <header class="top-bar">
+                <div class="searchbar">
+                    <div class="division-fields search">
+                        <img src="../Images/bx-search.png" alt="magnifyinglens">
+                        <p>Search</p>
+                    </div>
+                    <div class="division-fields choices">
+                        <div class="icons">
+                            <img src="../Images/translator-icon.png" alt="translator">
+                            <img src="../Images/menu-icon.png" alt="menu">
+                            <img src="../Images/halfmoon-icon.png" alt="halfmoon">
+                            <img src="../Images/notifications-icon.png" alt="notifications">
+                        </div>
+                        <div class="division-fields profile-details">
+                            <div class="usericon">
+                                <img src="../Images/employee.png" alt="profile-image">
+                                <span class="active-status"></span>
+                            </div>
+                            <div class="division-fields userdetails">
+                                <div class="username">
+                                    <p>John Abraham</p>
+                                    <h4>Admin</h4>
+                                </div>
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="newrole">
+                <form action="">
+                    <h5>Create New Role</h5>
+                    <div class="newrole-details">
+                        <div>
+                            <label for="role-name">Role Name</label><br>
+                            <input type="text" name="role-name" id="role-name">
+                        </div>
+                        <div>
+                            <label for="role-department">Department</label><br>
+                            <select name="roledepartment" id="role-department">
+                                <option value="UIUX">UI/UX</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="description-details">
+                        <label for="description">Description</label><br>
+                        <textarea name="description" id="description" cols="70" rows="10"></textarea><br>
+                    </div>
+                   <div class="location-details">
+                        <label for="location">Location</label><br>
+                        <select name="location" id="location">
+                        <option value="hyd">Hyderabad</option>
+                        </select>
+                   </div>
+                   <div>
+                        <label for="assign-employee">Assign Employees</label>
+                    </div>
+                    <div class="employment-buttons">
+                        <div>
+                            <button type="button">Cancel</button>
+                            <button type="submit">Add Employee</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

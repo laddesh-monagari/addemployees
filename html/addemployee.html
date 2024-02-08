@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>AddEmployee</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/addemployee.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="homepage">
+        <div class="side-navbar">
+            <div class="logo">
+                <img src="../Images/TezoLogo.png" alt="tezologo">
+                <img src="../Images/handle.png" alt="side-handle">
+            </div>
+            <h6>ALL</h6>
+            <div class="navitem">
+                <img src="../Images/Dashboard-icon.svg" alt="dashboard-icon">
+                <p>Dashboard</p>
+                <div class="indication">   </div> 
+            </div>
+            <div class="navitem">
+                <img src="../Images/employees-icon.svg" alt="group-icon">
+                <p>Employees</p>
+                <div class="indication"> </div> 
+            </div>
+            <h6>ROLE / USER MANAGEMENT</h6>
+            <div class="nav-events">
+                <div class="navitem">
+                    <img src="../Images/settings-icon.svg" alt="settings">
+                    <p> Roles</p>
+                </div>
+                <img src="../Images/righticon.svg" alt="right-arrow">
+            </div>
+            <div class="nav-events">
+                <div class="navitem">
+                    <img src="../Images/user-icon.svg" alt="user">
+                    <p> Access rights</p>
+                </div>
+                <img src="../Images/righticon.svg" alt="right-arrow">  
+            </div>
+            <div class="install-update">
+                <h3>Install new update 2.3.1A</h3>
+                <p>Allow to launch the new update for the AD application</p>
+                <div class="permission-btns">
+                    <button >Dismiss</button>
+                    <button >Accept</button>
+                </div>
+            </div>
+        </div>
+        <div class="context">
+            <header class="top-bar">
+                <div class="searchbar">
+                    <div class="division-fields search">
+                        <img src="../Images/bx-search.png" alt="magnifyinglens">
+                        <p>Search</p>
+                    </div>
+                    <div class="division-fields choices">
+                        <div class="icons">
+                            <img src="../Images/translator-icon.png" alt="translator">
+                            <img src="../Images/menu-icon.png" alt="menu">
+                            <img src="../Images/halfmoon-icon.png" alt="halfmoon">
+                            <img src="../Images/notifications-icon.png" alt="notifications">
+                        </div>
+                        <div class="division-fields profile-details">
+                            <div class="usericon">
+                                <img src="../Images/employee.png" alt="profile-image">
+                                <span class="active-status"></span>
+                            </div>
+                            <div class="division-fields userdetails">
+                                <div class="username">
+                                    <p>John Abraham</p>
+                                    <h4>Admin</h4>
+                                </div>
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="employee-form">
+                <h5>Add Employee</h5>
+                <div class="form-container">
+                    <div class="image-box">
+                        <img src="../images/user-upload.png" alt="profile-pic">
+                        <p>Edit</p>
+                    </div>
+                    <div class="information-box">
+                        <p>Personal Information</p>
+                        <div class="input-id">
+                            <label for="empno">Emp No</label><br>
+                            <input type="text" placeholder="Text" id="empno"/>
+                        </div>
+                        <div class="personal-info">
+                            <div><label for="firstname">First Name</label><br>
+                                <input type="text"  placeholder="Text" id="firstname"/>
+                            </div>
+                            <div><label for="lastname">Last Name</label><br>
+                                <input type="text" placeholder="Text" id="lastname"/>
+                            </div>
+                            <div>
+                                <label for="dob">Date of Birth</label><br>
+                                <input type="date" placeholder="Date of Birth" id="dob"/>
+                            </div>
+                            <div><label for="mail">Email Id</label><br>
+                                <input type="email" id="mail" placeholder="joe.j@technovert.com" id="mail" required/>
+                            </div>
+                            <div><label for="mobileno">Mobile Number</label><br>
+                                <input type="tel" placeholder="0000000000" pattern="[0-9]{10}" id="mobileno"/>
+                            </div>
+                        </div>
+                        <div class="employment-header">
+                            <p>Employment Information</p>
+                        </div>
+                        <div class="employment-details">
+                            <div>
+                                <label for="joindate">Joining Date</label><br>
+                                <input type="text" placeholder="12/08/2023" id="joindate"/>
+                            </div>
+                            <div>
+                                <label for="location">Location</label><br>
+                                <select name="location" id="location">
+                                    <option value="Hyderabad">Hyderabad</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="job-title">Job Title</label><br>
+                                <select name="jobtitle" id="job-title">
+                                    <option value="UX Designer">UX Designer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="department">Department</label><br>
+                                <select name="department" id="department">
+                                    <option value="UIUX">UI/UX</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="job-manager">Assign Manager</label><br>
+                                <select name="AssignManager" id="job-manager" >
+                                    <option value="" disabled selected>Search</option>
+                                    <option value="">UX Designer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="job-project">Assign Project</label><br>
+                                <select name="assignproject" id="job-project">
+                                    <option value="" disabled selected>Search</option>
+                                    <option value="UIUX">UI/UX</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="employment-buttons">
+                            <div>
+                                <button type="button">Cancel</button>
+                                <button type="submit">Add Employee</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

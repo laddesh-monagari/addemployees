@@ -1,0 +1,237 @@
+.role{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    height:80px;
+}
+.information h6{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top:30px;
+}
+.information p{
+    font-size: 15px;
+    margin-top: 10px;
+    padding-top:5px;
+}
+.add-role{
+    display: flex;
+    align-items: center;
+}
+.add{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40px;
+    width: 160px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 10px;
+    color:white;
+    background-color: rgb(245, 83, 71) ;
+    border:none;
+}
+.add img{
+    margin-top:5px;
+    padding-right: 10px;   
+}
+.add p{
+    margin-top: 10px;
+    font-size: 15px;
+}
+            /* filter bar */
+.filter-bar, .options, .filter, .dropdowns, .table-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter-bar{
+    width:100%;
+    height:50px;
+    background-color: rgba(244,72,72,0.12);
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(230, 165, 165)
+}
+.filter{
+    padding-left: 20px;
+    color:rgb(192, 79, 79); 
+    padding-right: 10px;   
+}
+.filter img{
+    padding-left:5px;
+}
+.dropdowns{
+    gap:10px;
+}
+.ddl {  
+    height: 35px;
+    text-align: center;
+    border-radius:5px;
+    border: 1px solid rgb(230, 165, 165)
+  }
+.dropdowns:first-child{
+    width: 110px;
+  }
+.dropdowns:nth-child(2) {
+    width: 90px;  
+}
+.btn button:first-child, .btn button:nth-child(2) {
+    width:60px;
+    height: 30px;
+     border-radius: 5px;
+    border: 1px solid rgb(230, 165, 165)
+}
+.btn button:first-child{
+    background-color: rgb(245, 83, 71);
+    color:white;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.btn button:nth-child(2){
+    margin-right: 10px;
+    background-color: white;
+}
+            /*container*/
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+    gap:15px;
+    margin-top:15px;
+    height:225px;
+}
+.individual-grp{
+    box-shadow: 0px 0px 2px 0.12px rgb(128, 118, 118);
+    height:225px;
+    border-radius: 10px;
+}
+.header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header h3{
+    margin-top: 40px;
+    margin-bottom:0px;
+    align-items: center;
+    padding-left: 20px;
+}
+.header img{
+    color:rgb(99, 99, 230);
+    align-items: center;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+.department, .location, .total-employees ,.view-all-employees{
+    color:#232B33CC;
+}
+.department, .location{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between; 
+   margin-top: 5px;
+   align-items: center;
+}
+.dep-information,.loc-information{
+    display:flex;
+    flex-direction: row;
+    justify-content:left; 
+    align-items: center;
+    padding-left: 15px;
+ }
+ .dep-information .material-symbols-outlined{
+     padding-top:15px;
+ }
+ .loc-information img{
+     padding-top:10px;
+     font-size: 20px;
+ }
+ .dep-information img{
+     padding-top: 15px;
+ }
+ .dep-information p{
+     padding-left: 5px;
+     margin-bottom: 0px;
+ }
+ .loc-information p{
+     padding-left: 5px;
+     margin-bottom: 0px;
+     margin-top:10px;
+ }
+ .dep-details p{
+     padding-right: 20px;
+     margin-bottom:0px;
+ }
+ .loc-details p{
+     padding-left: 5px;
+     margin-bottom: 10px;
+     margin-top:10px;
+     padding-right:20px;
+ }
+ .total-employees{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom:-20px;
+    margin-right:-20px;
+
+}
+.total-employees p{
+    margin-top:10px;
+    margin-bottom:0px;
+}
+.employees-count img{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+  .count{
+    position: relative;
+    right:-35px;
+    top:-27px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 6px;
+    background: #fff;
+    color: #000;
+    font-size: 10px;
+  }
+.employees-count .image1{
+    position: relative;
+    right:10px;
+    margin-top:10px;
+  } 
+  .employees-count .image2{
+    position: relative;
+   right:25px;
+  }
+  .employees-count .image3{
+    position: relative;
+    right: 40px;
+  }
+  .employees-count .image4{
+    position: relative;
+    right: 55px;
+  }
+.view-all-employees{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top:0px;
+    
+}
+.view-all-employees p{
+    margin-top:0px;   
+}
+.view-all-employees img{
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 5px;
+}
