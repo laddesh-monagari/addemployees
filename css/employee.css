@@ -15,11 +15,14 @@
     font-size: 15px;
     margin-top: 10px;
 }
-.buttons{
+.employee-btns{
     display: flex;
     align-items: center;
+    a{
+        text-decoration: none;
+    }
 }
-.buttons .export, .add-employees{
+.employee-btns .export, .add-employees{
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -28,12 +31,17 @@
     margin-right: 20px;
     align-items: center;
     border-radius: 10px;
-    border-color: rgb(216, 203, 203);
+}
+.employee-btns .export{
+border: 1px solid  rgb(216, 203, 203);
 }
 .export img{
     padding-right:8px;
+    padding-top:0px;
+    padding-bottom:5px;
 }
-.buttons .add-employees{
+
+.employee-btns .add-employees{
     width: 225px;
     margin-left: 0px;
     margin-top: 0px;
@@ -48,7 +56,8 @@
 }
 .add-employees p{
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 1rem;
+    padding-top:8px;
 }
 .alphabets{
     display: flex;
@@ -94,7 +103,7 @@
 .dropdowns{
     gap:10px;
 }
-.ddl {  
+.filterbar-ddl {  
     height: 35px;
     text-align: center;
     border-radius:5px;
@@ -109,19 +118,19 @@
 .dropdowns:nth-child(3) {
     width: 110px;
 }
-.btn button:first-child, .btn button:nth-child(2) {
+.filterbar-btn button:first-child, .filterbar-btn button:nth-child(2) {
     width:60px;
     height: 30px;
      border-radius: 5px;
     border: 1px solid rgb(230, 165, 165)
 }
-.btn button:first-child{
+.filterbar-btn button:first-child{
     background-color: rgb(245, 83, 71);
     color:white;
     margin-right: 10px;
     border-radius: 5px;
 }
-.btn button:nth-child(2){
+.filterbar-btn button:nth-child(2){
     margin-right: 10px;
     background-color: white;
 }
@@ -310,16 +319,19 @@ table tr td p{
   border-radius: 50%;
   margin-right: 10px;
 }
-.details p{
+.profile p{
     align-items:center;
 }
-.name{
+.profile p:first-child{
     margin-bottom: 0px;
 }
-.mail{
+.profile p:nth-child(2){
     margin-top: 0px;
     font-weight: normal;
 }
 .row color{
     background-color: rgba(244,72,72,0.12);
+}
+.nav-item a{
+    text-decoration: none;
 }

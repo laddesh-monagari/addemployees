@@ -84,17 +84,17 @@
             <div class="employee-form">
                 <h5>Add Employee</h5>
                 <div class="form-container">
-                    <div class="image-box">
-                        <img src="../images/user-upload.png" alt="profile-pic">
+                    <div class="image-field">
+                        <img src="../images/upload-image.svg" alt="profile-pic">
                         <p>Edit</p>
                     </div>
-                    <div class="information-box">
+                    <div class="information-field">
                         <p>Personal Information</p>
                         <div class="input-id">
                             <label for="empno">Emp No</label><br>
                             <input type="text" placeholder="Text" id="empno"/>
                         </div>
-                        <div class="personal-info">
+                        <div class="personal-information">
                             <div><label for="firstname">First Name</label><br>
                                 <input type="text"  placeholder="Text" id="firstname"/>
                             </div>
@@ -128,7 +128,7 @@
                             </div>
                             <div>
                                 <label for="job-title">Job Title</label><br>
-                                <select name="jobtitle" id="job-title">
+                                <select name="jobtitle" id="jobtitle">
                                     <option value="UX Designer">UX Designer</option>
                                 </select>
                             </div>
@@ -139,24 +139,24 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="job-manager">Assign Manager</label><br>
-                                <select name="AssignManager" id="job-manager" >
+                                <label for="manager">Assign Manager</label><br>
+                                <select name="AssignManager" id="manager" >
                                     <option value="" disabled selected>Search</option>
                                     <option value="">UX Designer</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="job-project">Assign Project</label><br>
-                                <select name="assignproject" id="job-project">
+                                <label for="project">Assign Project</label><br>
+                                <select name="assignproject" id="project">
                                     <option value="" disabled selected>Search</option>
                                     <option value="UIUX">UI/UX</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="employment-buttons">
+                        <div class="submission-btns">
                             <div>
                                 <button type="button">Cancel</button>
-                                <button type="submit">Add Employee</button>
+                                <button onclick="addData()">Add Employee</button>
                             </div>
                         </div>
                     </div>
@@ -165,4 +165,5 @@
         </div>
     </div>
 </body>
+<script src="../js/addtable.js"> </script>
 </html>

@@ -18,6 +18,9 @@
 .add-role{
     display: flex;
     align-items: center;
+    a{
+        text-decoration: none;
+    }
 }
 .add{
     display:flex;
@@ -66,7 +69,7 @@
 .dropdowns{
     gap:10px;
 }
-.ddl {  
+.filterbar-ddl {  
     height: 35px;
     text-align: center;
     border-radius:5px;
@@ -78,19 +81,19 @@
 .dropdowns:nth-child(2) {
     width: 90px;  
 }
-.btn button:first-child, .btn button:nth-child(2) {
+.filterbar-btn button:first-child, .filterbar-btn button:nth-child(2) {
     width:60px;
     height: 30px;
      border-radius: 5px;
     border: 1px solid rgb(230, 165, 165)
 }
-.btn button:first-child{
+.filterbar-btn button:first-child{
     background-color: rgb(245, 83, 71);
     color:white;
     margin-right: 10px;
     border-radius: 5px;
 }
-.btn button:nth-child(2){
+.filterbar-btn button:nth-child(2){
     margin-right: 10px;
     background-color: white;
 }

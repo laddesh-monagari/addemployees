@@ -13,25 +13,25 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-.image-box {
+.image-field {
     display: block;
     width: 12%;
 }
-.image-box p{
+.image-field p{
     margin-left: 20px;
 }
-.image-box img {
+.image-field img {
     height: 85px;
     width: 85px;
     border-radius: 45px;
     margin-right: 30px;
 }
-.information-box {
+.information-field {
     width: 88%;
     display: flex;
     flex-direction: column;
 }
-.information-box p {
+.information-field p {
     font-size: 1rem;
     margin: 0px 0px;
 }
@@ -49,22 +49,21 @@
     font-size: 1rem;
 }
 
-.personal-info {
+.personal-information {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.personal-info div {
-    margin-right: 20px;
+.personal-information div {
     margin-top: 30px;
+    margin-right: 20px;
     width: 26.8%;
 }
 
-.personal-info div input {
-    width: 98.5%;
+.personal-information div input {
     height: 40px;
-
+    width: 98.5%;
 }
 .employment-header {
     margin-top: 30px;
@@ -80,16 +79,16 @@
 } */
 
 .employment-details {
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .employment-details div {
     width: 40.6%;
-    margin-right: 20px;
     margin-top: 30px;
+    margin-right: 20px;
 }
 .employment-details div input {
     height: 40px;
@@ -107,16 +106,16 @@
     border: 2px solid rgb(223, 225, 230);
 }
 
-.employment-buttons {
+.submission-btns {
     margin-top: 70px;
 }
 
-.employment-buttons div {
-    margin-left: 55%;
+.submission-btns div {
+    margin-left: 50%;
     margin-bottom: 90px;
 }
 
-.employment-buttons button {
+.submission-btns button {
     width: 125px;
     height: 35px;
     background-color: rgb(251, 235, 235);
@@ -126,8 +125,9 @@
     margin-right: 20px;
 }
 
-.employment-buttons button:hover,
-.employment-buttons button:active {
+.submission-btns button:hover,
+.submission-btns button:active {
     background-color: rgb(244, 72, 72);
     color: white;
+    border-radius:20px;
 }

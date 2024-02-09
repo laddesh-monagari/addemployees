@@ -28,6 +28,9 @@
   display: flex;
   align-items: center;
 }
+.roles-choices .create a {
+  text-decoration: none;
+}
 .roles-choices .create .add {
   display: flex;
   flex-direction: row;
