@@ -7,10 +7,12 @@ body {
     justify-content: space-between;
 }
 .side-navbar{
+    display: block;  
     margin-left: 10px;
     margin-top: 10px;
-    width: 16.7%;
+    width: 18%;
     a{
+        color:black;
         text-decoration: none;
     }
 }
@@ -26,7 +28,7 @@ body {
 .logo img:nth-child(2) {
     position: absolute;
     top: 5px;
-    right: -15px;
+    right: -30px;
 }
 .side-navbar h6{
     font-size: 12px;
@@ -68,7 +70,7 @@ body {
 }
 .navitem:hover .indication{
     position:relative;
-    right:-120px;
+    right:-80px;
     width: 0px;
     height: 40px;
     border: 3px solid red;
@@ -84,14 +86,15 @@ body {
 .install-update h3{
     color: rgb(235, 84, 84);
     padding: 20px 0px 0px 5px;
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
 }
 .install-update p{
-    font-size: 15px;
+    font-size: 13px;
     padding: 0px 15px 0px 5px;
     line-height: 20px;
     text-align: left;
+    color:darkgrey
 }
 .permission-btns{
     display: flex;
@@ -116,8 +119,10 @@ body {
     background-color: rgb(235, 84, 84);
 }
 .context{
-    width:81%;
-    height: 70px;
+    width:80%;
+    padding-left: 40px;
+    padding-right:20px;
+    /* height: 70px; */
 }
 .searchbar {
     width: 100%;
@@ -189,5 +194,30 @@ body {
     right: 30px;
 }
 .material-symbols-outlined{
-    padding-left: 15px;
+    padding-left: 10px;
+    padding-right:5px;
+}
+.hidden-side-navbar{
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    img{
+        /* display:block; */
+        padding-left:10px;
+        width:25px;
+        height:auto;
+        margin-bottom:40px;
+    }
+}
+
+.hidden-side-navbar img:first-child{
+    width:35px;
+    height:35px;
+    padding-left:0px;
+    margin-top:20px;
+}
+.hidden-side-navbar img:nth-child(3)
+{
+    width: 20px;
+    padding-left: 20px;
 }

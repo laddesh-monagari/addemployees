@@ -60,7 +60,6 @@
     margin-right: 20px;
     width: 26.8%;
 }
-
 .personal-information div input {
     height: 40px;
     width: 98.5%;
@@ -71,13 +70,6 @@
 .employment-header p {
     margin: 0px 0px;
 }
-/* .employment-info{
-    margin-top: 30px;
-}
-.employment-info p{
-    margin: 0px 0px;
-} */
-
 .employment-details {
     display: flex;
     flex-direction: row;

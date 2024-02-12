@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <title>AddRole</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/newrole.css">
+    <link rel="stylesheet" href="../css/addrole.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="homepage">
-        <div class="side-navbar">
+        <div class="side-navbar" >
             <div class="logo">
                 <img src="../Images/TezoLogo.png" alt="tezologo">
-                <img src="../Images/handle.png" alt="side-handle">
+                <img  src="../Images/handle.png" onclick="hidesidenavbar()" alt="side-handle">
             </div>
             <h6>ALL</h6>
             <div class="navitem">
@@ -20,19 +20,19 @@
                 <p>Dashboard</p>
                 <div class="indication">   </div> 
             </div>
-            <div class="navitem">
+            <a href="../html/addemployee.html"><div class="navitem">
                 <img src="../Images/employees-icon.svg" alt="group-icon">
-                <p>Employees</p>
+                <p>Employees</p>   
                 <div class="indication"> </div> 
-            </div>
+            </div></a> 
             <h6>ROLE / USER MANAGEMENT</h6>
-            <div class="nav-events">
+            <a href="../html/roles.html"><div class="nav-events"> 
                 <div class="navitem">
                     <img src="../Images/settings-icon.svg" alt="settings">
                     <p> Roles</p>
                 </div>
                 <img src="../Images/righticon.svg" alt="right-arrow">
-            </div>
+            </div></a>
             <div class="nav-events">
                 <div class="navitem">
                     <img src="../Images/user-icon.svg" alt="user">
@@ -49,8 +49,17 @@
                 </div>
             </div>
         </div>
+        <section class="hidden-side-navbar" >
+            <img src="../images/handle.png" onclick="hidesidenavbar()" alt="logo-handle" />
+            <img src="../images/Dashboard-icon.svg" alt="dashboard-icon"/>
+            <a href="../html/addemployee.html">
+                <img src="../images/group-icon.svg" alt="grop-icon"/>
+            </a>
+            <img src="../images/settings-icon.svg" alt="settings"/>
+            <img src="../images/user-icon.svg" alt="user"/>
+        </section>
         <div class="context">
-            <header class="top-bar">
+            <header>
                 <div class="searchbar">
                     <div class="division-fields search">
                         <img src="../Images/bx-search.png" alt="magnifyinglens">
@@ -104,11 +113,33 @@
                         <label for="location">Location</label><br>
                         <select name="location" id="location">
                         <option value="hyd">Hyderabad</option>
+                        <option value="hyd">Chennai</option>
+                        <option value="hyd">Banglore</option>
                         </select>
                    </div>
                    <div>
                         <label for="assign-employee">Assign Employees</label>
-
+                        <select name="ddl-select-employee" placeholder="select an employee"></select>
+                    </div>
+                    <div class="select-employee">
+                        <img src="../images/employee.png" alt="employee-img"/>
+                        <p>Jennifer Dsousa</p>
+                        <input class="checkbox" type="checkbox"/>
+                    </div>
+                    <div class="select-employee">
+                        <img src="../images/employee.png" alt="employee-img"/>
+                        <p>Jennifer Dsousa</p>
+                        <input class="checkbox" type="checkbox"/>
+                    </div>
+                    <div class="select-employee">
+                        <img src="../images/employee.png" alt="employee-img"/>
+                        <p>Jennifer Dsousa</p>
+                        <input class="checkbox" type="checkbox"/>
+                    </div>
+                    <div class="select-employee">
+                        <img src="../images/employee.png" alt="employee-img"/>
+                        <p>Jennifer Dsousa</p>
+                        <input class="checkbox" type="checkbox"/>
                     </div>
                     <div class="employment-buttons">
                         <div>
@@ -122,4 +153,5 @@
         </div>
     </div>
 </body>
+<script src="../js/addtable.js"> </script>
 </html>

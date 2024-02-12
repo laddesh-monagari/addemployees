@@ -78,7 +78,131 @@ border: 1px solid  rgb(216, 203, 203);
 .alphabets img{
     padding-right: 10px;
 }
-.row-division{
+    /* filter-bar */
+.filter-bar {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 51px;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: rgb(253, 242, 242);
+    border-radius: 5px;
+    border: 1px solid rgba(244, 72, 72, 0.3);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    /* width: 380px; */
+    padding-top: 8px;
+    padding-left: 20px;
+    background-color: rgb(253, 242, 242);
+    border-radius: 10px;
+}
+.filter-info {
+    display: flex;
+    flex-direction: row;
+    color:var(--color1);
+}
+ .filter-info i{
+    font-size: 1.25rem;
+    padding: 7px;
+} 
+
+.filter-info p {
+    font-size: 0.8rem;
+    margin: 0px 0px;
+    padding-top: 8px;
+    font-weight: 600;
+}
+
+.filterbar-selection{
+    width: 300px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.filter-choice button{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding-top: 8px;
+    span{
+        padding-left:5px;
+        font-size:16px;
+    }
+}
+
+.filterbar-selection button {
+    height: 35px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    border: 1px solid rgba(244, 72, 72, 0.3);
+    i{
+        font-size: 1rem;
+    }
+}
+.filterbar-selection button:hover + .filter-choice div{
+   display: block;
+}
+
+.filter-choice div{
+        display: none;
+        width: 100%;
+        font-size: 0.8rem;
+        background-color: rgb(253, 242, 242);
+        position: relative;
+        z-index: 0;
+}
+.filter-choice{
+    margin-right: 20px;
+}
+#status {
+    width: 80px;
+}
+#location {
+    width: 90px;
+}
+#department {
+    width: 110px;
+}
+
+.filterbar-btn {
+    width: 140px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.filterbar-btn button {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    border: 1px solid var(--color2);
+    cursor: pointer;
+    border: 1px solid rgba(244, 72, 72, 0.3);
+}
+
+.filterbar-btn button:first-child {
+    background-color: white;
+}
+
+.filterbar-btn button:last-child {
+    background-color:white;
+
+}
+/* .row-division{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -133,7 +257,7 @@ border: 1px solid  rgb(216, 203, 203);
 .filterbar-btn button:nth-child(2){
     margin-right: 10px;
     background-color: white;
-}
+} */
 .employees-list{
     box-shadow: 0px 0px 5px 5px aliceblue ;
     width: 100%;
@@ -201,10 +325,10 @@ border: 1px solid  rgb(216, 203, 203);
 .dropdown:hover .content{
     display:block;
 }
-a:hover{
+/* a:hover{
     background-color:rgb(228, 90, 90) ;
     color:white;
-} 
+}  */
 .menu-button{
     border:none;
     background-color: none;
@@ -238,13 +362,13 @@ table {
     width: 100%;
 }
 .checkbox{
-        width: 80px;
+        width: 7%;
         text-align: center;
         transform: scale(1.4);
         margin-left: 0px;
 }
 .user{
-    width: 180px;
+    width: 15.7%;
 }
 .sort{
     display: flex;
@@ -256,22 +380,22 @@ table {
     height:15px;
 }
 .location{
-    width: 125px;
+    width: 10.6%;
 }
 .department{
-    width: 135px;
+    width: 12.3%;
 }
 .role{
-    width: 200px;
+    width: 18.5%;
 }
 .emp-no{
-    width: 130px;
+    width: 11.5%;
 }
 .status{
-    width: 100px;
+    width: 8.8%;
 }
 .join-date{
-    width: 115px;
+    width: 10.6%;
 }
 th{
     font-size: 12px;
@@ -329,9 +453,36 @@ table tr td p{
     margin-top: 0px;
     font-weight: normal;
 }
-.row color{
+.row-color{
     background-color: rgba(244,72,72,0.12);
 }
 .nav-item a{
     text-decoration: none;
+}
+.ddl-excesscolums a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    padding:15px 0px 15px 20px;
+    font-family: "albert sans";
+    align-items: center;
+    font-size: 13px;
+}
+.ddl-excesscolums .content{
+    position: absolute;
+    right:50px;
+    background-color: white;
+    min-width: 100px;
+    display:none;
+}
+.ddl-excesscolums:hover .content{
+    display:block;
+}
+a:hover{
+    background-color:rgba(244, 132, 136);
+    color:white;
+}
+.menu-button{
+    border:none;
+    background-color: none;
 }

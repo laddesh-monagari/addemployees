@@ -41,7 +41,7 @@
     margin-top: 30px;
 }
 .location-info select{
-    width: 34.5%;
+    width: 33.3%;
     height: 40px;
     border: 2px solid rgb(223, 225, 230);
 
@@ -72,4 +72,31 @@
 .employment-buttons button:active {
     background-color: rgb(244, 72, 72);
     color: white;
+}
+
+.select-employee{
+    display:flex;
+    width:33.3%;
+    align-items: center;
+    flex-direction: row;
+    position:relative;
+    justify-content:flex-start;
+    border: 2px solid rgb(223, 225, 230);
+    height:40px;
+    img{
+        margin-left:20px;
+        border-radius: 50%;
+        width:30px;
+        height:30px;
+    }
+    p{
+        margin-left:10px;
+    }
+    .checkbox{
+        position:absolute;
+        right:10px;
+    }
+}
+.newrole .select-employee{
+    margin:5px 0px;
 }

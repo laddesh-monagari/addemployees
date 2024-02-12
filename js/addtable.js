@@ -5,7 +5,7 @@ var employees=[
       "firstName": "Michael",
       "lastName": "Miller",
       "dateOfBirth": "03/18/1975",
-      "emailId": "michael.miller@exp.com",
+      "emailId": "michael@exp.com",
       "mobileNo": "(555) 555-6666",
       "joiningDate": "12/12/2025",
       "location": "Hyderabad",
@@ -19,7 +19,7 @@ var employees=[
       "firstName": "John",
       "lastName": "Doe",
       "dateOfBirth": "05/25/1980",
-      "emailId": "john.doe@example.com",
+      "emailId": "john@example.com",
       "mobileNo": "(555) 123-4567",
       "joiningDate": "01/01/2023",
       "location": "New York",
@@ -33,7 +33,7 @@ var employees=[
       "firstName": "Alice",
       "lastName": "Johnson",
       "dateOfBirth": "12/10/1990",
-      "emailId": "alice.johnson@example.com",
+      "emailId": "alice@example.com",
       "mobileNo": "(555) 987-6543",
       "joiningDate": "03/05/2022",
       "location": "San Francisco",
@@ -47,7 +47,7 @@ var employees=[
       "firstName": "Jane",
       "lastName": "Smith",
       "dateOfBirth": "09/15/1985",
-      "emailId": "jane.smith@example.com",
+      "emailId": "smith@example.com",
       "mobileNo": "(555) 456-7890",
       "joiningDate": "06/20/2021",
       "location": "London",
@@ -61,7 +61,7 @@ var employees=[
       "firstName": "David",
       "lastName": "Brown",
       "dateOfBirth": "11/30/1978",
-      "emailId": "david.brown@example.com",
+      "emailId": "brown@example.com",
       "mobileNo": "(555) 789-0123",
       "joiningDate": "09/10/2020",
       "location": "Berlin",
@@ -75,9 +75,9 @@ var employees=[
 
 var table;
 var tabledata=employees;
-var loadtable=()=> {
+var loadtable=(temp_tabledata=tabledata)=> {
     table = document.getElementsByClassName("table-container")[0];
-    for (var emp of tabledata) {
+    for (var emp of temp_tabledata) {
         var row = table.insertRow(-1);
         tablecell1(emp,row);
         tablecell2(emp,row);
@@ -141,92 +141,214 @@ function tablecell8(emp,row){
     cell8.textContent=emp.joiningDate;
 }
 
+//Hiding the sidenav-bar when clicked on image...
+var hidden=0;
+function hidesidenavbar(){
+  var hide=document.getElementsByClassName("side-navbar")[0];
+  var hide1=document.getElementsByClassName("hidden-side-navbar")[0];
+  var expand=document.getElementsByClassName("context")[0];
+  if(hidden===0){
+    hide.style.display="none";
+    hide1.style.display="flex";
+    expand.style.width="100%";
+    hidden=1;
+  }
+  else{
+    hide.style.display="block";
+    hide1.style.display="none";
+    expand.style.width="80%";
+    hidden=0;
+  }
+}
 
-/*Adding data from form to table.
+  //exporting data from the table to csv....
+function exportToCsv() {
+  const csvString = generateCSVString(employees);
+  downloadCSV(csvString, 'employee_data.csv');
+}
 
-function addData(){
-     empno = document.getElementById("empno").value; 
-	let firstname = document.getElementById("firstname").value; 
-    let lastname = document.getElementById("lastname").value; 
-	//let dob = document.getElementById("dob").value; 
-    let mail = document.getElementById("mail").value; 
-	//let mobileno = document.getElementById("mobileno").value; 
-    let joindate = document.getElementById("joindate").value; 
-	let location = document.getElementById("location").value;
-    let jobtitle = document.getElementById("jobtitle").value;
-    let department = document.getElementById("department").value;
-   // let manager = document.getElementById("manager").value;
-    //let project = document.getElementById("project").value;
+function generateCSVString(data) {
+  const headers = Object.keys(data[0]).join(',');
+  const rows = data.map(emp => Object.values(emp).join(','));
+  return `${headers}\n${rows.join('\n')}`;
+}
 
-    // let table = document.getElementById("table-container"); 
-    // let newRow = table.insertRow(table.rows.length);
-   let newrow = table.insertRow();
-   let col1 = newrow.insertCell(0);
-   let col2 = newrow.insertCell(1);
-   let col3 = newrow.insertCell(2);
-   let col4 = newrow.insertCell(3);
-   let col5 = newrow.insertCell(4);
-   let col6 = newrow.insertCell(5);
-   let col7 = newrow.insertCell(6);
-   let col8 = newrow.insertCell(7);
-//    let col9 = newrow.insertCell(8);
-
-    newRow.insertCell(0).innerHTML = firstname+" "+lastname; 
-    newRow.insertCell(1).innerHTML = mail; 
-    newRow.insertCell(2).innerHTML = location; 
-    newRow.insertCell(3).innerHTML = department;
-    newRow.insertCell(4).innerHTML = jobtitle;
-    newRow.insertCell(5).innerHTML = empno;
-    newRow.insertCell(6).innerHTML = "Active";
-    newRow.insertCell(7).innerHTML = joindate;
-}*/
-function export_data() {
-  const data = employees;
-  const csvString = `id,firstName,lastName,dateOfBirth,emailId,mobileNo,joiningDate,location,jobTitle,department,manager,project\n` +
-      data.map(emp => Object.values(emp).join(",")).join("\n");
-
+function downloadCSV(csvString, fileName) {
   const blob = new Blob([csvString], { type: 'text/csv' });
   const link = document.createElement('a');
-  link.href = window.URL.createObjectURL(blob);
-  link.download = 'employee_data.csv';
+  link.href = URL.createObjectURL(blob);
+  link.download = fileName;
   link.click();
-  window.URL.revokeObjectURL(link.href);
+  URL.revokeObjectURL(link.href);
 }
 
-function filterByName(alphabet) {
-    var table = document.getElementById("table-container");
-    var rows = table.getElementsByTagName("tr");
-    for (var i = 1; i < rows.length; i++) {
-      var NameCell = rows[i].getElementsByTagName("td")[1];
-      var name = NameCell.textContent || NameCell.innerText;
-      if (name.charAt(0).toUpperCase() === alphabet) {
-        rows[i].style.display = "";
-      } else {
-        rows[i].style.display = "none";
-      }
-    }
+function exportToCsv(filename) {
+  var csv = [];
+  var rows = document.querySelectorAll("table tr");
+
+  for (var i = 0; i < rows.length; i++) {
+      // Check if the row is hidden due to filtering
+      if (rows[i].classList.contains('filtered')) continue;
+
+      var row = [], cols = rows[i].querySelectorAll("td, th");
+
+      for (var j = 0; j < cols.length; j++) 
+          row.push(cols[j].innerText);
+
+      csv.push(row.join(","));        
+  }
+
+  // Download CSV file
+  downloadCSV(csv.join("\n"), filename);
 }
-function reset() {
+
+
+    // filtering table-data with alphabet buttons
+
+function filterByName(alphabet) {
   var table = document.getElementById("table-container");
   var rows = table.getElementsByTagName("tr");
   for (var i = 1; i < rows.length; i++) {
-    rows[i].style.display = "";
+    var NameCell = rows[i].getElementsByTagName("td")[1];
+    var name = NameCell.textContent || NameCell.innerText;
+    if (name.charAt(0).toUpperCase() === alphabet) {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
+}
+      //filter-bar operations....
+
+var filerhide=0;
+function hidefilterbar(){
+  var hide = document.getElementsByClassName("filter-bar")[0];
+  if(filerhide===0){
+    hide.style.display="flex";
+    filerhide=1;
+  }
+  else{
+    hide.style.display="none";
+    filerhide=0;
   }
 }
 
-
-function deleteSelected() {
-    var checkboxes = document.getElementsByClassName('delete-checkbox');
-    var table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-    var selectedRowsIndexes = [];
- 
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        selectedRowsIndexes.push(i);
-      }
-    }
-    for (var j = selectedRowsIndexes.length - 1; j >= 0; j--) {
-      table.deleteRow(selectedRowsIndexes[j]);
-    }
-    updateLocalStorage();
+function optionToggler(selectbutton) {
+  let toggle = 0;
+  const nextSibling = selectbutton.nextElementSibling;
+  const computedStyle = window.getComputedStyle(nextSibling);
+  if (toggle === 1) {
+      nextSibling.style.display = "none";
+      toggle=0;
   }
+  else if (toggle === 0) {
+      nextSibling.style.display = "block";
+      toggle = 1;
+  }
+}
+  
+function location_filter(givendata) {
+  let locations = document.getElementsByClassName("location-check");
+  console.log(locations);
+  let loc_array = [];
+  for (let loc of locations) {
+      if (loc.checked) {
+          loc_array.push(loc.value);
+      }
+  }
+  console.log(loc_array);
+  if (loc_array.length === 0) {
+      return givendata;
+  }
+  let afterData = [];
+  for (let temp of givendata) {
+      if (loc_array.includes(temp.location)) {
+          afterData.push(temp);
+      }
+  }
+  console.log(afterData);
+  return afterData;
+}
+function department_filter(givendata) {
+  let dept = document.getElementsByClassName("department-check");
+  let dep_array = [];
+  for (let loc of dept) {
+      if (loc.checked) {
+          dep_array.push(loc.value);
+          console.log(loc.value);
+      }
+  }
+  if(dep_array.length === 0) {
+      return givendata;
+  }
+  let afterData = [];
+  for (let temp of givendata) {
+      if (dep_array.includes(temp.department)) {
+          afterData.push(temp);
+      }
+  }
+  return afterData;
+}
+function apply() {
+  let filterdata = employees;
+  filterdata = location_filter(filterdata);
+  filterdata = department_filter(filterdata);
+  let ftext = document.getElementsByClassName("filter-info")[0];
+  ftext.style.color = "rgb(244, 72, 72)";
+  Cleartable();
+
+  debugger;
+  var tb1=document.getElementById('table-container');
+  var x=tb1.rows.length;
+  while(--x){
+    tb1.deleterow(x);
+  }
+
+  loadtable(filterdata);
+}
+
+window.addEventListener("onload",getdata());
+function getdata(){
+  let info=JSON.parse(localStorage.getItem("myKey"));
+  for(let a in info){
+    tabledata.push(info[a]);
+  }
+  Cleartable();
+  loadtable();
+}
+
+    //Operations on table....
+    
+function Cleartable() {
+  const tableBody = document.querySelector('table tbody');
+  while (tableBody.firstChild) {
+      tableBody.removeChild(tableBody.lastChild);
+  }
+}
+
+function reset() {
+  Cleartable();
+  loadtable(employees);
+  let ftext = document.getElementsByClassName("filter-info")[0];
+  ftext.style.color = "rgb(106, 111, 125)";
+  clearFilters();
+}
+
+function deleterow() {
+  var table = document.getElementById('table-container'); 
+  var rowCount = table.rows.length;
+  console.log(rowCount);
+  for (var i = 0; i < rowCount; i++) {
+      var row = table.rows[i];
+      var chkbox = row.cells[0].querySelector('input[type="checkbox"]'); 
+      if (chkbox && chkbox.checked) { 
+          if (rowCount <= 1) {
+              alert("Cannot delete all the rows.");
+              break;
+          }
+          table.deleteRow(i);
+          rowCount--;
+          i--;
+      }
+  }
+}

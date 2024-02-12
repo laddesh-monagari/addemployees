@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="homepage">
-        <div class="side-navbar">
+        <div class="side-navbar" >
             <div class="logo">
                 <img src="../Images/TezoLogo.png" alt="tezologo">
-                <img src="../Images/handle.png" alt="side-handle">
+                <img  src="../Images/handle.png" onclick="hidesidenavbar()" alt="side-handle">
             </div>
             <h6>ALL</h6>
             <div class="navitem">
@@ -50,13 +50,15 @@
                 </div>
             </div>
         </div>
-        <!-- <section class="hidden-sidenav-bar">
-            <img src="../images/handle.png" alt="logo-handle" />
+        <section class="hidden-side-navbar" >
+            <img src="../images/handle.png" onclick="hidesidenavbar()" alt="logo-handle" />
             <img src="../images/Dashboard-icon.svg" alt="dashboard-icon"/>
-            <img src="../images/group-icon.svg" alt="grop-icon"/>
+            <a href="../html/addemployee.html">
+                <img src="../images/group-icon.svg" alt="grop-icon"/>
+            </a>
             <img src="../images/settings-icon.svg" alt="settings"/>
             <img src="../images/user-icon.svg" alt="user"/>
-        </section> -->
+        </section>
         <div class="context">
             <header class="top-bar">
                 <div class="searchbar">
@@ -95,7 +97,7 @@
                     <p>Find all of your company's employees accounts and their associated roles.</p>
                 </div>
                 <div class="employee-btns">
-                    <button class="export" onclick="export_data()">
+                    <button class="export" onclick="exportToCsv()">
                         <img src="../Images/Masked Icon.png" alt="Export-symbol">
                         <p>EXPORT</p>
                     </button>
@@ -106,7 +108,7 @@
                 </div>
             </div>
             <div class="alphabets">
-                <img src="../Images/filter-icon.svg" alt="vector">
+                <img src="../Images/filter-icon.svg" onclick="hidefilterbar()" alt="vector">
                 <button onclick="filterByName('A')">A</button>
                 <button onclick="filterByName('B')">B</button>
                 <button onclick="filterByName('C')">C</button>
@@ -133,49 +135,75 @@
                 <button onclick="filterByName('X')">X</button>
                 <button onclick="filterByName('Y')">Y</button>
                 <button onclick="filterByName('Z')">Z</button>
-                <button onclick="filterByName('Z')">Z</button>
+                <!-- <button onclick="filterByName('Z')">Z</button> -->
             </div>
-            <div class="row-division filter-bar">
-                <div class="row-division options">
-                    <div class="row-division filter">
+
+            <div class="filter-bar">
+                <div class="options">
+                    <div class="filter-info">
                         <p>Filter</p>
-                        <img src="../Images/bars-filter.svg" alt="bars-filter">
+                        <i><img src="../Images/bars-filter.svg" alt="bars-filter"></i>
                     </div>
-                    <div class="row-division dropdowns">
-                        <select class="filterbar-ddl" >
-                            <option value="">Status</option>
-                        </select>
-                        <select class="filterbar-ddl">
-                            <option value="">Location</option>
-                            <option value="">Hyderabad</option>
-                            <option value="">Chennai</option>
-                            <option value="">mumbai</option>
-                        </select>
-                        <select class="filterbar-ddl" >
-                            <option value="">Department</option>
-                            <option value="">Product Engg.</option>
-                            <option value="">IT</option>
-                            <option value="">UIUX</option>
-                        </select>
+                    <div class="filterbar-selection">
+                        <div class="filter-choice">
+                            <button name="Status" id="status" onclick="optionToggler(this)">Status
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </button>
+                        <div class="select-elements">
+                            <label for="active"><input type="checkbox" class="status-check" value="active">Active</label><br>
+                            <label for="inactive"><input type="checkbox" class="status-check" value="active">Inactive</label><br>
+                        </div>
+                        </div>
+                        <div class="filter-choice">
+                            <button name="Location" id="location" onclick="optionToggler(this)">Location<i>
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </i></button>
+                            <div class="select-elements">
+                            <label for="Hyderabad"><input type="checkbox" class="location-check" value="Hyderabad">Hyderabad</label><br>
+                            <label for="Delhi"><input type="checkbox" class="location-check" value="Banglore">Delhi</label><br>
+                            <label for="Mumbai"><input type="checkbox" class="location-check" value="Mumbai">Mumbai</label><br>
+                            <label for="chennai"><input type="checkbox" class="location-check" value="Chenni">Chenni</label><br>
+
+                        </div>
+                        </div>
+                        <div class="filter-choice">
+                            <button name="Department" id="department" onclick="optionToggler(this)">Department<i>
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </i></button>
+                            <div class="select-elements">
+                            <label for="Product Dev"><input type="checkbox" class="department-check" value="Product Dev">Product Dev</label><br>
+                            <label for="Design"><input type="checkbox" class="department-check" value="Design">Design</label><br>
+                            <label for="Marketing"><input type="checkbox" class="department-check" value="Marketing">Marketing</label><br>
+                            <label for="Human Resource"><input type="checkbox"class="department-check" value="Human Resource" >HR</label><br>
+
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <div class="filterbar-btn">
-                    <button onclick="reset()" >Reset</button>
-                    <button >Apply</button>
+                    <button type="button" onclick="reset()">Reset</button>
+                    <button type="button" onclick="apply()">Apply</button>
                 </div>
             </div>
             <div class="employees-list">
                 <div class="table-header">
                     <div class="arrowdown-btn">
                         <img src="../Images/arrow-turn left -down.png" alt="arrowturn-image">
-                        <button onclick="deleteRows()">Delete</button>
+                        <button onclick="deleterow()">Delete</button>
                     </div>
                     <div class="add-image">
                         <img src="../Images/table-add.png" alt="tableadd-image">
                     </div>
                 </div>
                 <div class="table">
-                    <table class="table-container" id="table-container">
+                    <table class="table-heading" id="table-container">
+                        <thead>
                         <tr id="header-background">
                             <th class="checkbox"><input type="checkbox"></th>
                             <th class="user">
@@ -220,8 +248,19 @@
                                     <img src="../Images/sorticon.svg" alt="sorticon">
                                 </div>
                             </th>
-                            <th >...</th>
-                        </tr>
+                            <th class="ddl-excesscolums">
+                                <button class="menu-button" >...</button>
+                                <div class="content">
+                                    <a href="#">View Details</a>
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                </div>
+                            </th>
+                        </tr>                         
+                    </thead>
+                        <tbody class="table-container">
+
+                        </tbody>
                         
                     </table>
                 </div>

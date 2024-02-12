@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="homepage">
-        <div class="side-navbar">
+        <div class="side-navbar" >
             <div class="logo">
                 <img src="../Images/TezoLogo.png" alt="tezologo">
-                <img src="../Images/handle.png" alt="side-handle">
+                <img  src="../Images/handle.png" onclick="hidesidenavbar()" alt="side-handle">
             </div>
             <h6>ALL</h6>
             <div class="navitem">
@@ -20,19 +20,19 @@
                 <p>Dashboard</p>
                 <div class="indication">   </div> 
             </div>
-            <div class="navitem">
+            <a href="../html/addemployee.html"><div class="navitem">
                 <img src="../Images/employees-icon.svg" alt="group-icon">
-                <p>Employees</p>
+                <p>Employees</p>   
                 <div class="indication"> </div> 
-            </div>
+            </div></a> 
             <h6>ROLE / USER MANAGEMENT</h6>
-            <div class="nav-events">
+            <a href="../html/roles.html"><div class="nav-events"> 
                 <div class="navitem">
                     <img src="../Images/settings-icon.svg" alt="settings">
                     <p> Roles</p>
                 </div>
                 <img src="../Images/righticon.svg" alt="right-arrow">
-            </div>
+            </div></a>
             <div class="nav-events">
                 <div class="navitem">
                     <img src="../Images/user-icon.svg" alt="user">
@@ -49,6 +49,15 @@
                 </div>
             </div>
         </div>
+        <section class="hidden-side-navbar" >
+            <img src="../images/handle.png" onclick="hidesidenavbar()" alt="logo-handle" />
+            <img src="../images/Dashboard-icon.svg" alt="dashboard-icon"/>
+            <a href="../html/addemployee.html">
+                <img src="../images/group-icon.svg" alt="grop-icon"/>
+            </a>
+            <img src="../images/settings-icon.svg" alt="settings"/>
+            <img src="../images/user-icon.svg" alt="user"/>
+        </section>
         <div class="context">
             <header class="top-bar">
                 <div class="searchbar">
@@ -86,6 +95,7 @@
                 <div class="form-container">
                     <div class="image-field">
                         <img src="../images/upload-image.svg" alt="profile-pic">
+                        <input type="file" id="image"/>
                         <p>Edit</p>
                     </div>
                     <div class="information-field">
@@ -166,4 +176,5 @@
     </div>
 </body>
 <script src="../js/addtable.js"> </script>
+<script src="../js/insert-empdata.js"></script>
 </html>
