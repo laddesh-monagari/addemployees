@@ -202,62 +202,6 @@ border: 1px solid  rgb(216, 203, 203);
     background-color:white;
 
 }
-/* .row-division{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.filter-bar{
-    width:100%;
-    height:50px;
-    background-color: rgba(244,72,72,0.12);
-    margin-top: 15px;
-    border-radius: 10px;
-    border: 1px solid rgb(230, 165, 165)
-}
-.filter{
-    padding-left: 20px;
-    color:rgb(192, 79, 79); 
-    padding-right: 10px;   
-}
-.filter img{
-    padding-left:5px;
-}
-.dropdowns{
-    gap:10px;
-}
-.filterbar-ddl {  
-    height: 35px;
-    text-align: center;
-    border-radius:5px;
-    border: 1px solid rgb(230, 165, 165)
-  }
-.dropdowns:first-child{
-    width:75px;
-  }
-.dropdowns:nth-child(2) {
-    width: 90px;  
-}
-.dropdowns:nth-child(3) {
-    width: 110px;
-}
-.filterbar-btn button:first-child, .filterbar-btn button:nth-child(2) {
-    width:60px;
-    height: 30px;
-     border-radius: 5px;
-    border: 1px solid rgb(230, 165, 165)
-}
-.filterbar-btn button:first-child{
-    background-color: rgb(245, 83, 71);
-    color:white;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-.filterbar-btn button:nth-child(2){
-    margin-right: 10px;
-    background-color: white;
-} */
 .employees-list{
     box-shadow: 0px 0px 5px 5px aliceblue ;
     width: 100%;
@@ -325,13 +269,10 @@ border: 1px solid  rgb(216, 203, 203);
 .dropdown:hover .content{
     display:block;
 }
-/* a:hover{
-    background-color:rgb(228, 90, 90) ;
-    color:white;
-}  */
 .menu-button{
     border:none;
-    background-color: none;
+    background-color: white;
+    text-align: left;
 }
 .arrowdown-btn{
     margin-top: 20px;
@@ -467,6 +408,7 @@ table tr td p{
     font-family: "albert sans";
     align-items: center;
     font-size: 13px;
+    
 }
 .ddl-excesscolums .content{
     position: absolute;
@@ -478,7 +420,7 @@ table tr td p{
 .ddl-excesscolums:hover .content{
     display:block;
 }
-a:hover{
+.ddl-excesscolums a:hover{
     background-color:rgba(244, 132, 136);
     color:white;
 }

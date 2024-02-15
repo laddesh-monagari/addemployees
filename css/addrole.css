@@ -2,6 +2,9 @@
     width: 100%;
     height: auto;
 }
+.side-navbar{
+    width:16%;
+}
 .newrole h5{
     font-size: 1.1rem;
     font-weight: normal;
@@ -73,6 +76,30 @@
     background-color: rgb(244, 72, 72);
     color: white;
 }
+.assign-header input {
+    border: none;
+    padding-left: 10px;
+    height: 35px;
+    width: 300px;
+    z-index: 1;
+    border: none;
+    outline: none;  
+  }
+  .assign-header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+    width: 33.3%;
+    border: 2px solid blue;
+    margin-top: 10px;
+  
+  }
+  .assign-header i{
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 
 .select-employee{
     display:flex;
@@ -100,3 +127,4 @@
 .newrole .select-employee{
     margin:5px 0px;
 }
+  

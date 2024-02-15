@@ -3,6 +3,9 @@
     height: auto;
     margin-top: 30px;
 }
+.side-navbar{
+    width: 16%;
+}
 .employee-form h5 {
     font-size: 1.5rem;
     font-weight: normal;
@@ -10,12 +13,15 @@
 }
 .form-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 .image-field {
-    display: block;
-    width: 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* width: 12%; */
 }
 .image-field p{
     margin-left: 20px;
@@ -27,13 +33,16 @@
     margin-right: 30px;
 }
 .information-field {
-    width: 88%;
+    width: 80%;
     display: flex;
     flex-direction: column;
 }
 .information-field p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0px 0px;
+}
+.information-field p:first-child{
+    margin-top:30px;
 }
 .input-id{
     margin-top: 30px;
@@ -100,12 +109,15 @@
 
 .submission-btns {
     margin-top: 70px;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
 }
 
-.submission-btns div {
+/* .submission-btns div {
     margin-left: 50%;
     margin-bottom: 90px;
-}
+} */
 
 .submission-btns button {
     width: 125px;
@@ -122,4 +134,55 @@
     background-color: rgb(244, 72, 72);
     color: white;
     border-radius:20px;
+}
+.toast{
+    /* display:none; */
+    background-color: #fff;
+    border-radius:10px;
+    padding:20px 20px;
+    width:20%;
+    position:absolute;
+    top:20px;
+    right:30px;
+    border-left: 6px solid rgb(86, 148, 86);
+    background-color: rgb(201, 235, 201);
+    cursor:pointer;
+    overflow:hidden;
+    transform: translateX(calc(100% + 30px));
+}
+.toast .active{
+    transform: translateX(0%);
+}
+.toast .toast-content{
+    display:flex;
+    align-items: center;
+    padding-left:10px;
+    img{
+        width:20px;
+        height:20px;
+        margin-right:15px;
+    }
+}
+.toast-content .message{
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    margin:0px 0px;
+}
+.toast .progress{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    height:3px;
+    width:100%;
+    background: #fff;
+}
+.toast .progress:before{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    height:100%;
+    width:100%;
+    background:green;
 }

@@ -87,10 +87,8 @@ var loadtable=(temp_tabledata=tabledata)=> {
         tablecell6(emp,row);
         tablecell7(emp,row);
         tablecell8(emp,row);
+        tablecell9(emp,row);
     }
-}
-window.onload=function(){
-    loadtable();
 }
 function tablecell1(emp,row){
     let cell1 = row.insertCell(0);
@@ -103,7 +101,11 @@ function tablecell2(emp,row){
     let cell2=row.insertCell(1);
         let div=document.createElement("div");
         div.classList.add("employee-info");
-        div.appendChild(document.createElement("img"));
+        let rowImage=document.createElement("img");
+        if(localStorage.getItem(emp.id)){
+          rowImage.src=localStorage.getItem(emp.id);
+        }
+        div.appendChild(rowImage);
         let div2=document.createElement("div");
         div2.classList.add("profile");
         let ptext=document.createElement("p");
@@ -140,6 +142,12 @@ function tablecell8(emp,row){
     let cell8=row.insertCell(7);
     cell8.textContent=emp.joiningDate;
 }
+function tablecell9(emp,row){
+  let cell9=row.insertCell(8);
+  cell9.classList.add("ddl-excesscolums");
+  cell9.innerHTML=`<button class="menu-button" >...</button><div class="content"><a href="#">View Details</a><a href="#">Edit</a><a href="#">Delete</a></div>`;
+
+}
 
 //Hiding the sidenav-bar when clicked on image...
 var hidden=0;
@@ -166,13 +174,11 @@ function exportToCsv() {
   const csvString = generateCSVString(employees);
   downloadCSV(csvString, 'employee_data.csv');
 }
-
 function generateCSVString(data) {
   const headers = Object.keys(data[0]).join(',');
   const rows = data.map(emp => Object.values(emp).join(','));
   return `${headers}\n${rows.join('\n')}`;
 }
-
 function downloadCSV(csvString, fileName) {
   const blob = new Blob([csvString], { type: 'text/csv' });
   const link = document.createElement('a');
@@ -181,30 +187,20 @@ function downloadCSV(csvString, fileName) {
   link.click();
   URL.revokeObjectURL(link.href);
 }
-
 function exportToCsv(filename) {
   var csv = [];
   var rows = document.querySelectorAll("table tr");
-
   for (var i = 0; i < rows.length; i++) {
       // Check if the row is hidden due to filtering
       if (rows[i].classList.contains('filtered')) continue;
-
       var row = [], cols = rows[i].querySelectorAll("td, th");
-
       for (var j = 0; j < cols.length; j++) 
           row.push(cols[j].innerText);
-
       csv.push(row.join(","));        
   }
-
-  // Download CSV file
-  downloadCSV(csv.join("\n"), filename);
+  downloadCSV(csv.join("\n"), filename); // Download CSV file
 }
-
-
     // filtering table-data with alphabet buttons
-
 function filterByName(alphabet) {
   var table = document.getElementById("table-container");
   var rows = table.getElementsByTagName("tr");
@@ -219,7 +215,6 @@ function filterByName(alphabet) {
   }
 }
       //filter-bar operations....
-
 var filerhide=0;
 function hidefilterbar(){
   var hide = document.getElementsByClassName("filter-bar")[0];
@@ -232,7 +227,6 @@ function hidefilterbar(){
     filerhide=0;
   }
 }
-
 function optionToggler(selectbutton) {
   let toggle = 0;
   const nextSibling = selectbutton.nextElementSibling;
@@ -246,7 +240,6 @@ function optionToggler(selectbutton) {
       toggle = 1;
   }
 }
-  
 function location_filter(givendata) {
   let locations = document.getElementsByClassName("location-check");
   console.log(locations);
@@ -296,8 +289,6 @@ function apply() {
   let ftext = document.getElementsByClassName("filter-info")[0];
   ftext.style.color = "rgb(244, 72, 72)";
   Cleartable();
-
-  debugger;
   var tb1=document.getElementById('table-container');
   var x=tb1.rows.length;
   while(--x){
@@ -306,7 +297,6 @@ function apply() {
 
   loadtable(filterdata);
 }
-
 window.addEventListener("onload",getdata());
 function getdata(){
   let info=JSON.parse(localStorage.getItem("myKey"));
@@ -316,16 +306,13 @@ function getdata(){
   Cleartable();
   loadtable();
 }
-
-    //Operations on table....
-    
+    //Operations on table.... 
 function Cleartable() {
   const tableBody = document.querySelector('table tbody');
   while (tableBody.firstChild) {
       tableBody.removeChild(tableBody.lastChild);
   }
 }
-
 function reset() {
   Cleartable();
   loadtable(employees);
@@ -333,7 +320,6 @@ function reset() {
   ftext.style.color = "rgb(106, 111, 125)";
   clearFilters();
 }
-
 function deleterow() {
   var table = document.getElementById('table-container'); 
   var rowCount = table.rows.length;
@@ -351,4 +337,48 @@ function deleterow() {
           i--;
       }
   }
+}
+
+let sortcoloumns = [false, false, false, false, false, false, false, false];
+function sortrows(columnIndex) {
+    if (sortcoloumns[columnIndex] === false) {
+        sortTableAesc(columnIndex);
+        sortcoloumns[columnIndex] = true;
+    } 
+}
+
+cPrev = -1; // global var saves the previous c, used to determine if the same column is clicked again
+function sortBy(c) {
+    rows = document.getElementById("table-container").rows.length; 
+    columns = document.getElementById("table-container").rows[0].cells.length; 
+    arrTable = [...Array(rows)].map(e => Array(columns)); 
+
+    for (ro=0; ro<rows; ro++) { 
+        for (co=0; co<columns; co++) { 
+            arrTable[ro][co] = document.getElementById("table-container").rows[ro].cells[co].innerHTML;
+        }
+    }
+
+    th = arrTable.shift(); // remove the header row from the array, and save it
+    
+    if (c !== cPrev) { // different column is clicked, so sort by the new column
+        arrTable.sort(
+            function (a, b) {
+                if (a[c] === b[c]) {
+                    return 0;
+                } else {
+                    return (a[c] < b[c]) ? -1 : 1;
+                }
+            }
+        );
+    } else { // if the same column is clicked then reverse the array
+        arrTable.reverse();
+    }
+    cPrev = c;
+    arrTable.unshift(th); // put the header back in to the array
+    for (ro=0; ro<rows; ro++) {
+        for (co=0; co<columns; co++) {
+            document.getElementById("table-container").rows[ro].cells[co].innerHTML = arrTable[ro][co];
+        }
+    }
 }

@@ -37,7 +37,7 @@ function addData(){
   var jobtitle=document.getElementById("jobtitle").value;
   var department=document.getElementById("department").value;
   var manager=document.getElementById("manager").value;
-  var project=document.getElementById("project").value;4
+  var project=document.getElementById("project").value;
   storeImage(empno);
   var imageurl;
   var temp=new Employee(empno,firstname,lastname,dob,mail,mobileno,joindate,location,jobtitle,department,manager,project,imageurl);
@@ -60,12 +60,9 @@ const imageInput = document.getElementById('image');
 if (imageInput && imageInput.files.length > 0) { // Check if file is selected
   const file = imageInput.files[0];
   const reader = new FileReader();
-
   reader.addEventListener('load', () => {
-    // Handle successful file reading
     localStorage.setItem(empno, reader.result); // Store Base64-encoded data
     console.log("Image stored in local storage.");
-
     // Optionally display the image:
     const newImage = document.getElementById('profile');
     if (newImage) {
@@ -73,15 +70,27 @@ if (imageInput && imageInput.files.length > 0) { // Check if file is selected
       newImage.src=imageurl;
     }
   });
-
   reader.addEventListener('error', (error) => {
-    // Handle errors during file reading
     console.error('Error reading image:', error);
     alert('An error occurred while reading the image. Please try again.');
   });
-
   reader.readAsDataURL(file); // Asynchronously read the file
-} else {
+}
+ else {
   alert("Please select an image to upload.");
+  }
 }
+function clear(){
+  var element=document.getElementsByClassName("form-container");
+  element.reset();
 }
+
+const addelement=document.querySelector(".addelement"),
+      toast=document.querySelector(".toast")
+      close=document.querySelector(".close"),
+      progress=document.querySelector(".progress");
+
+      addelement.addEventListener("click", ()=>{
+      toast.classList.add("active");
+      progress.classList.add("active");
+  })

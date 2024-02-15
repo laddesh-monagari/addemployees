@@ -27,7 +27,7 @@
                 <div class="indication"> </div> 
             </div></a> 
             <h6>ROLE / USER MANAGEMENT</h6>
-            <a href="../html/roles.html"><div class="nav-events"> 
+            <a href="../html/addrole.html"><div class="nav-events"> 
                 <div class="navitem">
                     <img src="../Images/settings-icon.svg" alt="settings">
                     <p> Roles</p>
@@ -54,9 +54,9 @@
             <img src="../images/handle.png" onclick="hidesidenavbar()" alt="logo-handle" />
             <img src="../images/Dashboard-icon.svg" alt="dashboard-icon"/>
             <a href="../html/addemployee.html">
-                <img src="../images/group-icon.svg" alt="grop-icon"/>
+                <img class="hidden-icon" src="../images/group-icon.svg" alt="grop-icon"/>
             </a>
-            <img src="../images/settings-icon.svg" alt="settings"/>
+            <a href="../html/addrole.html"><img  src="../images/settings-icon.svg" alt="settings"/></a>
             <img src="../images/user-icon.svg" alt="user"/>
         </section>
         <div class="context">
@@ -204,64 +204,63 @@
                 <div class="table">
                     <table class="table-heading" id="table-container">
                         <thead>
-                        <tr id="header-background">
-                            <th class="checkbox"><input type="checkbox"></th>
-                            <th class="user">
-                                <div class="sort">
-                                    <p>USER</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>
-                            <th class="location">
-                                <div class="sort">
-                                    <p>LOCATION</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>
-                            <th class="department">
-                                <div class="sort">
-                                    <p>DEPARTMENT</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>   
-                            <th class="role">
-                                <div class="sort">
-                                    <p>ROLE</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>
-                            <th class="emp-no">
-                                <div class="sort">
-                                    <p>EMP NO</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>
-                            <th class="status">
-                                <div class="sort">
-                                    <p>STATUS</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div> 
-                            </th>
-                            <th class="join-date">
-                                <div class="sort">
-                                    <p>JOIN DT</p>
-                                    <img src="../Images/sorticon.svg" alt="sorticon">
-                                </div>
-                            </th>
-                            <th class="ddl-excesscolums">
-                                <button class="menu-button" >...</button>
-                                <div class="content">
-                                    <a href="#">View Details</a>
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                </div>
-                            </th>
-                        </tr>                         
-                    </thead>
+                            <tr id="header-background">
+                                <th class="checkbox"><input type="checkbox"></th>
+                                <th class="user">
+                                    <div class="sort" onclick="sortBy(1)">
+                                        <p>USER</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>
+                                <th class="location">
+                                    <div class="sort" onclick="sortBy(2)">
+                                        <p>LOCATION</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>
+                                <th class="department">
+                                    <div class="sort" onclick="sortBy(3)">
+                                        <p>DEPARTMENT</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>   
+                                <th class="role">
+                                    <div class="sort" onclick="sortBy(4)">
+                                        <p>ROLE</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>
+                                <th class="emp-no">
+                                    <div class="sort" onclick="sortBy(5)">
+                                        <p>EMP NO</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>
+                                <th class="status">
+                                    <div class="sort" onclick="sortBy(6)">
+                                        <p>STATUS</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div> 
+                                </th>
+                                <th class="join-date">
+                                    <div class="sort" onclick="sortBy(7)">
+                                        <p>JOIN DT</p>
+                                        <img src="../Images/sorticon.svg" alt="sorticon">
+                                    </div>
+                                </th>
+                                <th class="ddl-excesscolums">
+                                    <!-- <button class="menu-button" >...</button>
+                                    <div class="content">
+                                        <a href="#">View Details</a>
+                                        <a href="#">Edit</a>
+                                        <a href="#">Delete</a>
+                                    </div> -->
+                                </th>
+                            </tr>                         
+                        </thead>
                         <tbody class="table-container">
-
+                    
                         </tbody>
-                        
                     </table>
                 </div>
             </div>

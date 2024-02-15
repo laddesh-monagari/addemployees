@@ -96,7 +96,6 @@
                     <div class="image-field">
                         <img src="../images/upload-image.svg" alt="profile-pic">
                         <input type="file" id="image"/>
-                        <p>Edit</p>
                     </div>
                     <div class="information-field">
                         <p>Personal Information</p>
@@ -163,12 +162,23 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="submission-btns">
-                            <div>
-                                <button type="button">Cancel</button>
-                                <button onclick="addData()">Add Employee</button>
-                            </div>
+                    </div>
+                    <div class="submission-btns">
+                        <div>
+                            <button type="button" onclick="clear()" >Cancel</button>
+                            <button class="addelement" onclick="addData()" onclick="showToast(successmsg)">Add Employee</button>
                         </div>
+                    </div>
+                    <div class="toast">
+                        <div class="toast-content">
+                            <img src="../images/success-check.png" alt="success-checkin"/>
+                            <div class="message">
+                                <span class="text text-1">Success</span>
+                                <span class="text text-2">Employee has been added</span>
+                            </div>
+                            <span class=" close material-symbols-outlined close">close</span>
+                        </div>
+                        <div class="progress"></div>
                     </div>
                 </div>
             </div>
