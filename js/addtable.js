@@ -1,20 +1,6 @@
 
 var employees=[
     {
-      "id": "TZ002345",
-      "firstName": "Michael",
-      "lastName": "Miller",
-      "dateOfBirth": "03/18/1975",
-      "emailId": "michael@exp.com",
-      "mobileNo": "(555) 555-6666",
-      "joiningDate": "12/12/2025",
-      "location": "Hyderabad",
-      "jobTitle": "Project Manager",
-      "department": "Management",
-      "manager": "Jane Smith",
-      "project": "Task8"
-    },
-    {
       "id": "TZ002346",
       "firstName": "John",
       "lastName": "Doe",
@@ -191,14 +177,13 @@ function exportToCsv(filename) {
   var csv = [];
   var rows = document.querySelectorAll("table tr");
   for (var i = 0; i < rows.length; i++) {
-      // Check if the row is hidden due to filtering
       if (rows[i].classList.contains('filtered')) continue;
       var row = [], cols = rows[i].querySelectorAll("td, th");
       for (var j = 0; j < cols.length; j++) 
           row.push(cols[j].innerText);
       csv.push(row.join(","));        
   }
-  downloadCSV(csv.join("\n"), filename); // Download CSV file
+  downloadCSV(csv.join("\n"), filename);
 }
     // filtering table-data with alphabet buttons
 function filterByName(alphabet) {
@@ -294,7 +279,6 @@ function apply() {
   while(--x){
     tb1.deleterow(x);
   }
-
   loadtable(filterdata);
 }
 window.addEventListener("onload",getdata());
@@ -347,7 +331,7 @@ function sortrows(columnIndex) {
     } 
 }
 
-cPrev = -1; // global var saves the previous c, used to determine if the same column is clicked again
+cPrev = -1;
 function sortBy(c) {
     rows = document.getElementById("table-container").rows.length; 
     columns = document.getElementById("table-container").rows[0].cells.length; 
@@ -358,10 +342,8 @@ function sortBy(c) {
             arrTable[ro][co] = document.getElementById("table-container").rows[ro].cells[co].innerHTML;
         }
     }
-
-    th = arrTable.shift(); // remove the header row from the array, and save it
-    
-    if (c !== cPrev) { // different column is clicked, so sort by the new column
+    th = arrTable.shift(); 
+    if (c !== cPrev) { 
         arrTable.sort(
             function (a, b) {
                 if (a[c] === b[c]) {
@@ -371,11 +353,11 @@ function sortBy(c) {
                 }
             }
         );
-    } else { // if the same column is clicked then reverse the array
+    } else { 
         arrTable.reverse();
     }
     cPrev = c;
-    arrTable.unshift(th); // put the header back in to the array
+    arrTable.unshift(th); 
     for (ro=0; ro<rows; ro++) {
         for (co=0; co<columns; co++) {
             document.getElementById("table-container").rows[ro].cells[co].innerHTML = arrTable[ro][co];

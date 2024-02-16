@@ -1,5 +1,6 @@
 body {
     font-family: "public sans";
+    overflow-x: hidden;
 }
 .homepage {
     display: flex;
@@ -215,6 +216,9 @@ body {
     padding-left:0px;
     margin-top:20px;
 }
-.hidden-side-navbar a{
-   font-size: 15px;
+
+.hidden-icon{
+    width: 25px !important;
+    padding-left: 10px !important;
+    margin-top:0px !important;
 }
